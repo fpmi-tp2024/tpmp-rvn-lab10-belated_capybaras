@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A92D7F662C07CAF0009B5A54 /* ShelterDogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D7F652C07CAF0009B5A54 /* ShelterDogsView.swift */; };
+		A94223D32C07B72C008F6223 /* ProfilePropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94223D22C07B72C008F6223 /* ProfilePropertyView.swift */; };
+		A94223D52C07C0A0008F6223 /* ShelterProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94223D42C07C0A0008F6223 /* ShelterProfileView.swift */; };
 		A9BDFDDF2C0746070022427F /* TP_Lab_10App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFDDE2C0746070022427F /* TP_Lab_10App.swift */; };
 		A9BDFDE12C0746070022427F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFDE02C0746070022427F /* ContentView.swift */; };
 		A9BDFDE32C0746090022427F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BDFDE22C0746090022427F /* Assets.xcassets */; };
@@ -16,11 +19,10 @@
 		A9BDFDFC2C0746090022427F /* TP_Lab_10UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFDFB2C0746090022427F /* TP_Lab_10UITestsLaunchTests.swift */; };
 		A9BDFE0F2C0746760022427F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE0E2C0746760022427F /* WelcomeView.swift */; };
 		A9BDFE112C074E3A0022427F /* DogCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE102C074E3A0022427F /* DogCardView.swift */; };
-		A9BDFE132C076B000022427F /* DogsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE122C076B000022427F /* DogsListView.swift */; };
+		A9BDFE132C076B000022427F /* UserDogsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE122C076B000022427F /* UserDogsListView.swift */; };
 		A9BDFE152C076D200022427F /* DogProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE142C076D200022427F /* DogProfileView.swift */; };
-		A9BDFE172C0780AC0022427F /* UserSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE162C0780AC0022427F /* UserSignUpView.swift */; };
+		A9BDFE172C0780AC0022427F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE162C0780AC0022427F /* SignUpView.swift */; };
 		A9BDFE192C0781240022427F /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE182C0781240022427F /* InputView.swift */; };
-		A9BDFE1B2C079AFF0022427F /* ShelterSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE1A2C079AFF0022427F /* ShelterSignUpView.swift */; };
 		A9BDFE1D2C079C310022427F /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE1C2C079C310022427F /* UserProfileView.swift */; };
 		A9BDFE1F2C079C980022427F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE1E2C079C980022427F /* SignInView.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A92D7F652C07CAF0009B5A54 /* ShelterDogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterDogsView.swift; sourceTree = "<group>"; };
+		A94223D22C07B72C008F6223 /* ProfilePropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePropertyView.swift; sourceTree = "<group>"; };
+		A94223D42C07C0A0008F6223 /* ShelterProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterProfileView.swift; sourceTree = "<group>"; };
 		A9BDFDDB2C0746070022427F /* TP_Lab_10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TP_Lab_10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BDFDDE2C0746070022427F /* TP_Lab_10App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP_Lab_10App.swift; sourceTree = "<group>"; };
 		A9BDFDE02C0746070022427F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,11 +60,10 @@
 		A9BDFDFB2C0746090022427F /* TP_Lab_10UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP_Lab_10UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A9BDFE0E2C0746760022427F /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		A9BDFE102C074E3A0022427F /* DogCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCardView.swift; sourceTree = "<group>"; };
-		A9BDFE122C076B000022427F /* DogsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListView.swift; sourceTree = "<group>"; };
+		A9BDFE122C076B000022427F /* UserDogsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDogsListView.swift; sourceTree = "<group>"; };
 		A9BDFE142C076D200022427F /* DogProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogProfileView.swift; sourceTree = "<group>"; };
-		A9BDFE162C0780AC0022427F /* UserSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpView.swift; sourceTree = "<group>"; };
+		A9BDFE162C0780AC0022427F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A9BDFE182C0781240022427F /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
-		A9BDFE1A2C079AFF0022427F /* ShelterSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterSignUpView.swift; sourceTree = "<group>"; };
 		A9BDFE1C2C079C310022427F /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		A9BDFE1E2C079C980022427F /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,13 +164,15 @@
 			children = (
 				A9BDFE0E2C0746760022427F /* WelcomeView.swift */,
 				A9BDFE102C074E3A0022427F /* DogCardView.swift */,
-				A9BDFE122C076B000022427F /* DogsListView.swift */,
+				A9BDFE122C076B000022427F /* UserDogsListView.swift */,
 				A9BDFE142C076D200022427F /* DogProfileView.swift */,
-				A9BDFE162C0780AC0022427F /* UserSignUpView.swift */,
+				A9BDFE162C0780AC0022427F /* SignUpView.swift */,
 				A9BDFE182C0781240022427F /* InputView.swift */,
-				A9BDFE1A2C079AFF0022427F /* ShelterSignUpView.swift */,
 				A9BDFE1C2C079C310022427F /* UserProfileView.swift */,
 				A9BDFE1E2C079C980022427F /* SignInView.swift */,
+				A94223D22C07B72C008F6223 /* ProfilePropertyView.swift */,
+				A94223D42C07C0A0008F6223 /* ShelterProfileView.swift */,
+				A92D7F652C07CAF0009B5A54 /* ShelterDogsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,15 +316,17 @@
 			files = (
 				A9BDFDE12C0746070022427F /* ContentView.swift in Sources */,
 				A9BDFE152C076D200022427F /* DogProfileView.swift in Sources */,
+				A94223D52C07C0A0008F6223 /* ShelterProfileView.swift in Sources */,
 				A9BDFE0F2C0746760022427F /* WelcomeView.swift in Sources */,
+				A94223D32C07B72C008F6223 /* ProfilePropertyView.swift in Sources */,
 				A9BDFDDF2C0746070022427F /* TP_Lab_10App.swift in Sources */,
-				A9BDFE132C076B000022427F /* DogsListView.swift in Sources */,
+				A9BDFE132C076B000022427F /* UserDogsListView.swift in Sources */,
 				A9BDFE1D2C079C310022427F /* UserProfileView.swift in Sources */,
-				A9BDFE1B2C079AFF0022427F /* ShelterSignUpView.swift in Sources */,
 				A9BDFE192C0781240022427F /* InputView.swift in Sources */,
 				A9BDFE112C074E3A0022427F /* DogCardView.swift in Sources */,
 				A9BDFE1F2C079C980022427F /* SignInView.swift in Sources */,
-				A9BDFE172C0780AC0022427F /* UserSignUpView.swift in Sources */,
+				A9BDFE172C0780AC0022427F /* SignUpView.swift in Sources */,
+				A92D7F662C07CAF0009B5A54 /* ShelterDogsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

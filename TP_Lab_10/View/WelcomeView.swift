@@ -22,7 +22,7 @@ struct WelcomeView: View {
                     Text("Welcome!")
                         .font(.largeTitle)
                         .fontWeight(.semibold)
-                    .foregroundStyle(Color(red: 0.545, green: 0.333, blue: 0.278))
+                        .foregroundStyle(Color(red: 0.545, green: 0.333, blue: 0.278))
                     
                     Image("dogGreeting")
                         .resizable()

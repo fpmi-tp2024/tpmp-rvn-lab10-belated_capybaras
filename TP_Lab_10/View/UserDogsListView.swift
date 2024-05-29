@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DogsListView: View {
+struct UserDogsListView: View {
     
     var body: some View {
         
@@ -43,5 +43,5 @@ struct DogsListView: View {
 }
 
 #Preview {
-    DogsListView()
+    UserDogsListView()
 }
