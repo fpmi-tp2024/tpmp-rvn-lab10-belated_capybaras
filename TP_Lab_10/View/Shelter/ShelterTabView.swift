@@ -13,10 +13,26 @@ enum Tab {
 }
 
 struct ShelterTabView: View {
+    
+    init() {
+        // Customize tab bar appearance
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.white
+        
+        // Apply the appearance to the tab bar
+        UITabBar.appearance().standardAppearance = appearance
+        if #available(iOS 15.0, *) {
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+        }
+    }
+    
     @State private var selectedTab: Tab = .pets
+    
     var body: some View {
         
         NavigationView {
+            
             TabView(selection: $selectedTab) {
                 
                 Spacer()
@@ -35,6 +51,8 @@ struct ShelterTabView: View {
                 
                 Spacer()
             }
+            .accentColor(Color("lightGreen"))
+            
         }
         .navigationBarBackButtonHidden(true)
         

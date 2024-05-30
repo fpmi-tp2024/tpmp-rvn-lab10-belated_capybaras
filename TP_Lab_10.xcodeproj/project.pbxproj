@@ -14,7 +14,7 @@
 		A9A327462C085E44000F8140 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A327452C085E44000F8140 /* InputView.swift */; };
 		A9A327482C086683000F8140 /* ShelterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A327472C086683000F8140 /* ShelterTabView.swift */; };
 		A9A3274A2C0868AE000F8140 /* UserTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A327492C0868AE000F8140 /* UserTabView.swift */; };
-		A9A3274C2C088BBB000F8140 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3274B2C088BBB000F8140 /* LaunchScreen.swift */; };
+		A9A3274C2C088BBB000F8140 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3274B2C088BBB000F8140 /* LaunchScreenView.swift */; };
 		A9A3274E2C089372000F8140 /* OnboardingScreen1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3274D2C089372000F8140 /* OnboardingScreen1View.swift */; };
 		A9A327502C089809000F8140 /* OnboardingScreen2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3274F2C089809000F8140 /* OnboardingScreen2View.swift */; };
 		A9A327522C089912000F8140 /* OnboardingScreen3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A327512C089912000F8140 /* OnboardingScreen3View.swift */; };
@@ -33,6 +33,8 @@
 		A9BDFE192C0781240022427F /* AuthorizationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE182C0781240022427F /* AuthorizationInputView.swift */; };
 		A9BDFE1D2C079C310022427F /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE1C2C079C310022427F /* UserProfileView.swift */; };
 		A9BDFE1F2C079C980022427F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE1E2C079C980022427F /* SignInView.swift */; };
+		A9DCF0882C08FE2F008234CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCF0872C08FE2F008234CC /* User.swift */; };
+		A9DCF08C2C090932008234CC /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCF08B2C090932008234CC /* SignUpViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +62,7 @@
 		A9A327452C085E44000F8140 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		A9A327472C086683000F8140 /* ShelterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterTabView.swift; sourceTree = "<group>"; };
 		A9A327492C0868AE000F8140 /* UserTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabView.swift; sourceTree = "<group>"; };
-		A9A3274B2C088BBB000F8140 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		A9A3274B2C088BBB000F8140 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		A9A3274D2C089372000F8140 /* OnboardingScreen1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen1View.swift; sourceTree = "<group>"; };
 		A9A3274F2C089809000F8140 /* OnboardingScreen2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen2View.swift; sourceTree = "<group>"; };
 		A9A327512C089912000F8140 /* OnboardingScreen3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen3View.swift; sourceTree = "<group>"; };
@@ -83,6 +85,8 @@
 		A9BDFE182C0781240022427F /* AuthorizationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInputView.swift; sourceTree = "<group>"; };
 		A9BDFE1C2C079C310022427F /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		A9BDFE1E2C079C980022427F /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		A9DCF0872C08FE2F008234CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A9DCF08B2C090932008234CC /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +157,7 @@
 		A9A327532C08B8CE000F8140 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				A9A3274B2C088BBB000F8140 /* LaunchScreen.swift */,
+				A9A3274B2C088BBB000F8140 /* LaunchScreenView.swift */,
 				A9A3274D2C089372000F8140 /* OnboardingScreen1View.swift */,
 				A9A3274F2C089809000F8140 /* OnboardingScreen2View.swift */,
 				A9A327512C089912000F8140 /* OnboardingScreen3View.swift */,
@@ -227,6 +231,7 @@
 		A9BDFE082C0746140022427F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A9DCF0872C08FE2F008234CC /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 		A9BDFE0B2C0746220022427F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A9DCF08B2C090932008234CC /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -390,6 +396,8 @@
 				A9BDFDDF2C0746070022427F /* TP_Lab_10App.swift in Sources */,
 				A9A3274A2C0868AE000F8140 /* UserTabView.swift in Sources */,
 				A9BDFE132C076B000022427F /* UserDogsListView.swift in Sources */,
+				A9DCF08C2C090932008234CC /* SignUpViewModel.swift in Sources */,
+				A9DCF0882C08FE2F008234CC /* User.swift in Sources */,
 				A9A327522C089912000F8140 /* OnboardingScreen3View.swift in Sources */,
 				A9A327482C086683000F8140 /* ShelterTabView.swift in Sources */,
 				A9BDFE1D2C079C310022427F /* UserProfileView.swift in Sources */,
@@ -400,7 +408,7 @@
 				A9BDFE172C0780AC0022427F /* SignUpView.swift in Sources */,
 				A92D7F662C07CAF0009B5A54 /* ShelterDogsListView.swift in Sources */,
 				A9A327502C089809000F8140 /* OnboardingScreen2View.swift in Sources */,
-				A9A3274C2C088BBB000F8140 /* LaunchScreen.swift in Sources */,
+				A9A3274C2C088BBB000F8140 /* LaunchScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

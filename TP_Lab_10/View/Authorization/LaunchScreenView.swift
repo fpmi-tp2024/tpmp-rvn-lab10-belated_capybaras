@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LaunchScreen: View {
+struct LaunchScreenView: View {
     var body: some View {
         ZStack {
             LinearGradient(
@@ -42,5 +42,5 @@ struct LaunchScreen: View {
 }
 
 #Preview {
-    LaunchScreen()
+    LaunchScreenView()
 }

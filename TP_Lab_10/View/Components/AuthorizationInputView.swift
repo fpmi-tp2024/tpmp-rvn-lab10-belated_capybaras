@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AuthorizationInputView: View {
-    /*@Binding*/ @State var text: String = ""
+    
+    @Binding var text: String
     let title: String
     let placeholder: String
     var isSecureField: Bool = false
@@ -40,5 +41,5 @@ struct AuthorizationInputView: View {
 }
 
 #Preview {
-    AuthorizationInputView(text: "", title: "Email Address", placeholder: "name@example.com")
+    AuthorizationInputView(text: .constant(""), title: "Email Address", placeholder: "name@example.com")
 }

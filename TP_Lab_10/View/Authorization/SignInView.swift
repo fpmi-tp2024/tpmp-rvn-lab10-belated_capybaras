@@ -9,6 +9,9 @@ import SwiftUI
 
 struct SignInView: View {
     
+    @State private var email: String = ""
+    @State private var password: String = ""
+    
     var body: some View {
         
         NavigationView {
@@ -34,14 +37,14 @@ struct SignInView: View {
                         .frame(width: 200, height: 200)
                         .padding()
                    
-                    AuthorizationInputView(title: "Email", placeholder: "example@gmail.com")
+                    AuthorizationInputView(text: $email, title: "Email", placeholder: "example@gmail.com")
                         .padding(.horizontal)
                     
-                    AuthorizationInputView(title: "Password", placeholder: "Enter your password", isSecureField: true)
+                    AuthorizationInputView(text: $password, title: "Password", placeholder: "Enter your password", isSecureField: true)
                         .padding(.horizontal)
                     
                     
-                    NavigationLink(destination: UserTabView()) {
+                    NavigationLink(destination: ShelterTabView()) {
                         
                         HStack {
                             Text("SING IN")

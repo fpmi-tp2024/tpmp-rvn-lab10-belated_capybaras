@@ -9,6 +9,11 @@ import SwiftUI
 
 struct SignUpView: View {
     
+    @State var username: String = ""
+    @State var email: String = ""
+    @State var password: String = ""
+    @State var confirmPassword: String = ""
+    
     var body: some View {
         
         NavigationView {
@@ -29,18 +34,17 @@ struct SignUpView: View {
                         .scaledToFit()
                         .frame(width: 200, height: 200)
                         .padding()
-            
-                    
-                    AuthorizationInputView(title: "Username", placeholder: "Enter your name")
+
+                    AuthorizationInputView(text: $username, title: "Username", placeholder: "Enter your name")
                         .padding(.horizontal)
                     
-                    AuthorizationInputView(title: "Email", placeholder: "example@gmail.com")
+                    AuthorizationInputView(text: $email, title: "Email", placeholder: "example@gmail.com")
                         .padding(.horizontal)
                     
-                    AuthorizationInputView(title: "Password", placeholder: "Enter your password", isSecureField: true)
+                    AuthorizationInputView(text: $password, title: "Password", placeholder: "Enter your password", isSecureField: true)
                         .padding(.horizontal)
                     
-                    AuthorizationInputView(title: "Confirm password", placeholder: "Confirm your password",  isSecureField: true)
+                    AuthorizationInputView(text: $confirmPassword, title: "Confirm password", placeholder: "Confirm your password",  isSecureField: true)
                         .padding(.horizontal)
                     
                     NavigationLink(destination: SignInView()) {
@@ -58,26 +62,34 @@ struct SignUpView: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: SignInView()) {
+                    Button {
                         
-                        HStack(spacing: 3) {
-                            Text("Already have an account?")
+                    } label: {
+                        NavigationLink(destination: SignInView()) {
                             
-                            Text("Sign in")
-                                .fontWeight(.bold)
+                            HStack(spacing: 3) {
+                                Text("Already have an account?")
                                 
+                                Text("Sign in")
+                                    .fontWeight(.bold)
+                                    
+                            }
+                            .font(.system(size: 15))
+                            .foregroundStyle(.black)
                         }
-                        .font(.system(size: 15))
-                        .foregroundStyle(.black)
                     }
+                    
+                    
                 }
             }
         }
         .navigationBarBackButtonHidden(true)
     }
     
+   
+    
 }
 
 #Preview {
-    SignUpView()
+    SignUpView(signUpData: SignUpViewModel())
 }

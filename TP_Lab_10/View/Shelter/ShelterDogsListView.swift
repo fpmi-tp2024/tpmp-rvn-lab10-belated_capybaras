@@ -12,8 +12,9 @@ struct ShelterDogsListView: View {
     var body: some View {
         
         NavigationView {
-            ZStack(alignment: .bottomTrailing) {
             
+            ZStack(alignment: .bottomTrailing) {
+                
                 Color("lightPurple")
                     .ignoresSafeArea()
                 
@@ -43,7 +44,7 @@ struct ShelterDogsListView: View {
                                 ZStack(alignment: .topLeading) {
                                     
                                     DogCardView()
-                                   
+                                    
                                     Button {
                                         
                                     } label: {
@@ -58,7 +59,7 @@ struct ShelterDogsListView: View {
                                             .padding(.top, 33)
                                     }
                                 }
-                               
+                                
                             }
                             
                         }
@@ -68,7 +69,9 @@ struct ShelterDogsListView: View {
                     
                 }
                 
+                
                 NavigationLink(destination: AddDogView()) {
+                    
                     Image(systemName: "plus")
                         .foregroundStyle(.white)
                         .imageScale(.large)
@@ -80,13 +83,17 @@ struct ShelterDogsListView: View {
                         }
                         .padding(.trailing, 30)
                         .padding(.bottom, 20)
+                    
+                    
                 }
+                
                 
             }
         }
         .navigationBarBackButtonHidden(true)
     }
 }
+
 
 #Preview {
     ShelterDogsListView()

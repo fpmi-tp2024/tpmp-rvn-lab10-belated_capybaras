@@ -51,9 +51,9 @@ struct AddDogView: View {
                             InputView(title: "Name", value: .constant(""), placeholder: "Enter dog's name")
                             
                             InputView(title: "Age", value: .constant(""), placeholder: "Enter dog's age")
-                                
+                            
                             InputView(title: "Weight", value: .constant(""), placeholder: "Enter dog's weight")
-                                
+                            
                             InputView(title: "Short description", value: .constant(""), placeholder: "Enter short description")
                             
                             InputView(title: "Description", value: .constant(""), placeholder: "Enter description")
@@ -62,7 +62,7 @@ struct AddDogView: View {
                         .padding(.vertical)
                         .background(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 30))
-                
+                        
                         
                         
                         NavigationLink(destination: ShelterDogsListView()) {
@@ -85,9 +85,9 @@ struct AddDogView: View {
                 }
                 
                 
-                Button(action: {
+                Button {
                     dismiss()
-                }) {
+                } label: {
                     Image(systemName: "chevron.left")
                         .foregroundStyle(.white)
                         .background {
