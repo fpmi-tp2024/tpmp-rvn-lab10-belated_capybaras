@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A92D7F662C07CAF0009B5A54 /* ShelterDogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D7F652C07CAF0009B5A54 /* ShelterDogsView.swift */; };
+		A92D7F662C07CAF0009B5A54 /* ShelterDogsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92D7F652C07CAF0009B5A54 /* ShelterDogsListView.swift */; };
 		A94223D32C07B72C008F6223 /* ProfilePropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94223D22C07B72C008F6223 /* ProfilePropertyView.swift */; };
 		A94223D52C07C0A0008F6223 /* ShelterProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94223D42C07C0A0008F6223 /* ShelterProfileView.swift */; };
+		A9A327402C085B7B000F8140 /* AddDogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3273F2C085B7B000F8140 /* AddDogView.swift */; };
+		A9A327462C085E44000F8140 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A327452C085E44000F8140 /* InputView.swift */; };
+		A9A327482C086683000F8140 /* ShelterTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A327472C086683000F8140 /* ShelterTabView.swift */; };
+		A9A3274A2C0868AE000F8140 /* UserTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A327492C0868AE000F8140 /* UserTabView.swift */; };
+		A9A3274C2C088BBB000F8140 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3274B2C088BBB000F8140 /* LaunchScreen.swift */; };
+		A9A3274E2C089372000F8140 /* OnboardingScreen1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3274D2C089372000F8140 /* OnboardingScreen1View.swift */; };
+		A9A327502C089809000F8140 /* OnboardingScreen2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3274F2C089809000F8140 /* OnboardingScreen2View.swift */; };
+		A9A327522C089912000F8140 /* OnboardingScreen3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A327512C089912000F8140 /* OnboardingScreen3View.swift */; };
 		A9BDFDDF2C0746070022427F /* TP_Lab_10App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFDDE2C0746070022427F /* TP_Lab_10App.swift */; };
 		A9BDFDE12C0746070022427F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFDE02C0746070022427F /* ContentView.swift */; };
 		A9BDFDE32C0746090022427F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BDFDE22C0746090022427F /* Assets.xcassets */; };
@@ -17,12 +25,12 @@
 		A9BDFDF02C0746090022427F /* TP_Lab_10Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFDEF2C0746090022427F /* TP_Lab_10Tests.swift */; };
 		A9BDFDFA2C0746090022427F /* TP_Lab_10UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFDF92C0746090022427F /* TP_Lab_10UITests.swift */; };
 		A9BDFDFC2C0746090022427F /* TP_Lab_10UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFDFB2C0746090022427F /* TP_Lab_10UITestsLaunchTests.swift */; };
-		A9BDFE0F2C0746760022427F /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE0E2C0746760022427F /* WelcomeView.swift */; };
+		A9BDFE0F2C0746760022427F /* RoleChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE0E2C0746760022427F /* RoleChoiceView.swift */; };
 		A9BDFE112C074E3A0022427F /* DogCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE102C074E3A0022427F /* DogCardView.swift */; };
 		A9BDFE132C076B000022427F /* UserDogsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE122C076B000022427F /* UserDogsListView.swift */; };
 		A9BDFE152C076D200022427F /* DogProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE142C076D200022427F /* DogProfileView.swift */; };
 		A9BDFE172C0780AC0022427F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE162C0780AC0022427F /* SignUpView.swift */; };
-		A9BDFE192C0781240022427F /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE182C0781240022427F /* InputView.swift */; };
+		A9BDFE192C0781240022427F /* AuthorizationInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE182C0781240022427F /* AuthorizationInputView.swift */; };
 		A9BDFE1D2C079C310022427F /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE1C2C079C310022427F /* UserProfileView.swift */; };
 		A9BDFE1F2C079C980022427F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE1E2C079C980022427F /* SignInView.swift */; };
 /* End PBXBuildFile section */
@@ -45,9 +53,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A92D7F652C07CAF0009B5A54 /* ShelterDogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterDogsView.swift; sourceTree = "<group>"; };
+		A92D7F652C07CAF0009B5A54 /* ShelterDogsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterDogsListView.swift; sourceTree = "<group>"; };
 		A94223D22C07B72C008F6223 /* ProfilePropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePropertyView.swift; sourceTree = "<group>"; };
 		A94223D42C07C0A0008F6223 /* ShelterProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterProfileView.swift; sourceTree = "<group>"; };
+		A9A3273F2C085B7B000F8140 /* AddDogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDogView.swift; sourceTree = "<group>"; };
+		A9A327452C085E44000F8140 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		A9A327472C086683000F8140 /* ShelterTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterTabView.swift; sourceTree = "<group>"; };
+		A9A327492C0868AE000F8140 /* UserTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabView.swift; sourceTree = "<group>"; };
+		A9A3274B2C088BBB000F8140 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		A9A3274D2C089372000F8140 /* OnboardingScreen1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen1View.swift; sourceTree = "<group>"; };
+		A9A3274F2C089809000F8140 /* OnboardingScreen2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen2View.swift; sourceTree = "<group>"; };
+		A9A327512C089912000F8140 /* OnboardingScreen3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreen3View.swift; sourceTree = "<group>"; };
+		A9A327542C08C913000F8140 /* TP-Lab-10-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TP-Lab-10-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A9BDFDDB2C0746070022427F /* TP_Lab_10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TP_Lab_10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BDFDDE2C0746070022427F /* TP_Lab_10App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP_Lab_10App.swift; sourceTree = "<group>"; };
 		A9BDFDE02C0746070022427F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,12 +75,12 @@
 		A9BDFDF52C0746090022427F /* TP_Lab_10UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TP_Lab_10UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BDFDF92C0746090022427F /* TP_Lab_10UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP_Lab_10UITests.swift; sourceTree = "<group>"; };
 		A9BDFDFB2C0746090022427F /* TP_Lab_10UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP_Lab_10UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A9BDFE0E2C0746760022427F /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		A9BDFE0E2C0746760022427F /* RoleChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleChoiceView.swift; sourceTree = "<group>"; };
 		A9BDFE102C074E3A0022427F /* DogCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCardView.swift; sourceTree = "<group>"; };
 		A9BDFE122C076B000022427F /* UserDogsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDogsListView.swift; sourceTree = "<group>"; };
 		A9BDFE142C076D200022427F /* DogProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogProfileView.swift; sourceTree = "<group>"; };
 		A9BDFE162C0780AC0022427F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		A9BDFE182C0781240022427F /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		A9BDFE182C0781240022427F /* AuthorizationInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInputView.swift; sourceTree = "<group>"; };
 		A9BDFE1C2C079C310022427F /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		A9BDFE1E2C079C980022427F /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +110,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9A327412C085B85000F8140 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				A9BDFE1C2C079C310022427F /* UserProfileView.swift */,
+				A9BDFE122C076B000022427F /* UserDogsListView.swift */,
+				A9A327492C0868AE000F8140 /* UserTabView.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		A9A327422C085B8B000F8140 /* Shelter */ = {
+			isa = PBXGroup;
+			children = (
+				A9A3273F2C085B7B000F8140 /* AddDogView.swift */,
+				A92D7F652C07CAF0009B5A54 /* ShelterDogsListView.swift */,
+				A94223D42C07C0A0008F6223 /* ShelterProfileView.swift */,
+				A9A327472C086683000F8140 /* ShelterTabView.swift */,
+			);
+			path = Shelter;
+			sourceTree = "<group>";
+		};
+		A9A327432C085B9A000F8140 /* Dog */ = {
+			isa = PBXGroup;
+			children = (
+				A9BDFE142C076D200022427F /* DogProfileView.swift */,
+				A9BDFE102C074E3A0022427F /* DogCardView.swift */,
+			);
+			path = Dog;
+			sourceTree = "<group>";
+		};
+		A9A327442C085BD5000F8140 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A9BDFE182C0781240022427F /* AuthorizationInputView.swift */,
+				A94223D22C07B72C008F6223 /* ProfilePropertyView.swift */,
+				A9A327452C085E44000F8140 /* InputView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A9A327532C08B8CE000F8140 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				A9A3274B2C088BBB000F8140 /* LaunchScreen.swift */,
+				A9A3274D2C089372000F8140 /* OnboardingScreen1View.swift */,
+				A9A3274F2C089809000F8140 /* OnboardingScreen2View.swift */,
+				A9A327512C089912000F8140 /* OnboardingScreen3View.swift */,
+				A9BDFE0E2C0746760022427F /* RoleChoiceView.swift */,
+				A9BDFE162C0780AC0022427F /* SignUpView.swift */,
+				A9BDFE1E2C079C980022427F /* SignInView.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
 		A9BDFDD22C0746070022427F = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +187,7 @@
 		A9BDFDDD2C0746070022427F /* TP_Lab_10 */ = {
 			isa = PBXGroup;
 			children = (
+				A9A327542C08C913000F8140 /* TP-Lab-10-Info.plist */,
 				A9BDFE0B2C0746220022427F /* ViewModel */,
 				A9BDFE0A2C07461C0022427F /* View */,
 				A9BDFE082C0746140022427F /* Model */,
@@ -162,17 +234,11 @@
 		A9BDFE0A2C07461C0022427F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A9BDFE0E2C0746760022427F /* WelcomeView.swift */,
-				A9BDFE102C074E3A0022427F /* DogCardView.swift */,
-				A9BDFE122C076B000022427F /* UserDogsListView.swift */,
-				A9BDFE142C076D200022427F /* DogProfileView.swift */,
-				A9BDFE162C0780AC0022427F /* SignUpView.swift */,
-				A9BDFE182C0781240022427F /* InputView.swift */,
-				A9BDFE1C2C079C310022427F /* UserProfileView.swift */,
-				A9BDFE1E2C079C980022427F /* SignInView.swift */,
-				A94223D22C07B72C008F6223 /* ProfilePropertyView.swift */,
-				A94223D42C07C0A0008F6223 /* ShelterProfileView.swift */,
-				A92D7F652C07CAF0009B5A54 /* ShelterDogsView.swift */,
+				A9A327532C08B8CE000F8140 /* Authorization */,
+				A9A327442C085BD5000F8140 /* Components */,
+				A9A327432C085B9A000F8140 /* Dog */,
+				A9A327422C085B8B000F8140 /* Shelter */,
+				A9A327412C085B85000F8140 /* User */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,16 +383,24 @@
 				A9BDFDE12C0746070022427F /* ContentView.swift in Sources */,
 				A9BDFE152C076D200022427F /* DogProfileView.swift in Sources */,
 				A94223D52C07C0A0008F6223 /* ShelterProfileView.swift in Sources */,
-				A9BDFE0F2C0746760022427F /* WelcomeView.swift in Sources */,
+				A9BDFE0F2C0746760022427F /* RoleChoiceView.swift in Sources */,
+				A9A3274E2C089372000F8140 /* OnboardingScreen1View.swift in Sources */,
 				A94223D32C07B72C008F6223 /* ProfilePropertyView.swift in Sources */,
+				A9A327402C085B7B000F8140 /* AddDogView.swift in Sources */,
 				A9BDFDDF2C0746070022427F /* TP_Lab_10App.swift in Sources */,
+				A9A3274A2C0868AE000F8140 /* UserTabView.swift in Sources */,
 				A9BDFE132C076B000022427F /* UserDogsListView.swift in Sources */,
+				A9A327522C089912000F8140 /* OnboardingScreen3View.swift in Sources */,
+				A9A327482C086683000F8140 /* ShelterTabView.swift in Sources */,
 				A9BDFE1D2C079C310022427F /* UserProfileView.swift in Sources */,
-				A9BDFE192C0781240022427F /* InputView.swift in Sources */,
+				A9BDFE192C0781240022427F /* AuthorizationInputView.swift in Sources */,
 				A9BDFE112C074E3A0022427F /* DogCardView.swift in Sources */,
 				A9BDFE1F2C079C980022427F /* SignInView.swift in Sources */,
+				A9A327462C085E44000F8140 /* InputView.swift in Sources */,
 				A9BDFE172C0780AC0022427F /* SignUpView.swift in Sources */,
-				A92D7F662C07CAF0009B5A54 /* ShelterDogsView.swift in Sources */,
+				A92D7F662C07CAF0009B5A54 /* ShelterDogsListView.swift in Sources */,
+				A9A327502C089809000F8140 /* OnboardingScreen2View.swift in Sources */,
+				A9A3274C2C088BBB000F8140 /* LaunchScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,9 +567,11 @@
 				DEVELOPMENT_TEAM = 4RQ5G2BLCM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TP-Lab-10-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreenView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -522,9 +598,11 @@
 				DEVELOPMENT_TEAM = 4RQ5G2BLCM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "TP-Lab-10-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreenView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
