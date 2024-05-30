@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct TP_Lab_10App: App {
+    @StateObject private var signUpViewModel = SignUpViewModel()
+    @StateObject private var signInViewModel = SignInViewModel()
+    @StateObject private var dogs = DogsViewModel()
+        
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(signUpViewModel)
+                .environmentObject(signInViewModel)
+                .environmentObject(dogs)
         }
     }
 }

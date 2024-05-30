@@ -9,14 +9,13 @@ import SwiftUI
 
 struct SignUpView: View {
     
-    @State var username: String = ""
-    @State var email: String = ""
-    @State var password: String = ""
-    @State var confirmPassword: String = ""
+    //@State private var isNavigatingToSignIn = false
+    @EnvironmentObject var signUpData: SignUpViewModel
     
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
+            
             ZStack {
                 
                 VStack(spacing: 0) {
@@ -34,62 +33,93 @@ struct SignUpView: View {
                         .scaledToFit()
                         .frame(width: 200, height: 200)
                         .padding()
-
-                    AuthorizationInputView(text: $username, title: "Username", placeholder: "Enter your name")
+                    
+                    AuthorizationInputView(text: $signUpData.username, title: "Username", placeholder: "Enter your name")
                         .padding(.horizontal)
                     
-                    AuthorizationInputView(text: $email, title: "Email", placeholder: "example@gmail.com")
+                    AuthorizationInputView(text: $signUpData.email, title: "Email", placeholder: "example@gmail.com")
                         .padding(.horizontal)
                     
-                    AuthorizationInputView(text: $password, title: "Password", placeholder: "Enter your password", isSecureField: true)
+                    AuthorizationInputView(text: $signUpData.password, title: "Password", placeholder: "Enter your password", isSecureField: true)
                         .padding(.horizontal)
                     
-                    AuthorizationInputView(text: $confirmPassword, title: "Confirm password", placeholder: "Confirm your password",  isSecureField: true)
-                        .padding(.horizontal)
+//                    AuthorizationInputView(text: $signUpData.confirmPassword, title: "Confirm password", placeholder: "Confirm your password",  isSecureField: true)
+//                        .padding(.horizontal)
+//                    
+                    //                     NavigationLink(destination: SignInView()) {
+                    //                     HStack {
+                    //                     Text("SING UP")
+                    //                     .fontWeight(.semibold)
+                    //                     Image(systemName: "arrow.right")
+                    //                     }
+                    //                     .foregroundStyle(.white)
+                    //                     .frame(width: UIScreen.main.bounds.width - 32, height: 48)
+                    //                     }
+                    //                     .background(Color("lightGreen"))
+                    //                     .clipShape(RoundedRectangle(cornerRadius: 10))
+                    //                     .padding(.top, 24)
                     
-                    NavigationLink(destination: SignInView()) {
-                        HStack {
-                            Text("SING UP")
-                                .fontWeight(.semibold)
-                            Image(systemName: "arrow.right")
+                    Button(action: {
+                        signUpData.signUp()
+                    }) {
+                        if signUpData.isLoading {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color("lightGreen"))
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                        } else {
+                            HStack {
+                                Text("SIGN UP")
+                                    .fontWeight(.semibold)
+                                Image(systemName: "arrow.right")
+                            }
+                            .foregroundStyle(.white)
+                            .frame(width: UIScreen.main.bounds.width - 32, height: 48)
                         }
-                        .foregroundStyle(.white)
-                        .frame(width: UIScreen.main.bounds.width - 32, height: 48)
                     }
                     .background(Color("lightGreen"))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding(.top, 24)
+                    .disabled(signUpData.isLoading)
                     
                     Spacer()
                     
                     Button {
-                        
+                        signUpData.shouldNavigateToSignIn = true
                     } label: {
-                        NavigationLink(destination: SignInView()) {
+                        HStack(spacing: 3) {
+                            Text("Already have an account?")
                             
-                            HStack(spacing: 3) {
-                                Text("Already have an account?")
-                                
-                                Text("Sign in")
-                                    .fontWeight(.bold)
-                                    
-                            }
-                            .font(.system(size: 15))
-                            .foregroundStyle(.black)
+                            Text("Sign in")
+                                .fontWeight(.bold)
+                            
                         }
+                        .font(.system(size: 15))
+                        .foregroundStyle(.black)
                     }
                     
                     
                 }
             }
+            .navigationDestination(isPresented: $signUpData.shouldNavigateToSignIn) {
+                SignInView()
+            }
+            .alert(isPresented: $signUpData.isAlert) {
+                Alert(title: Text("Ups"), message: Text("Can't sign up user"), dismissButton: .default(Text("OK")))
+            }
+            
         }
         .navigationBarBackButtonHidden(true)
     }
     
-   
+    
     
 }
 
 #Preview {
-    SignUpView(signUpData: SignUpViewModel())
+    SignUpView()
+        .environmentObject(SignUpViewModel())
+        .environmentObject(SignInViewModel())
 }

@@ -9,11 +9,13 @@ import SwiftUI
 
 struct DogCardView: View {
     
+    var dog: Dog
+    
     var body: some View {
         
         VStack {
             
-            Image("dogCard")
+            Image(uiImage: dog.image)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 170, height: 120)
@@ -26,21 +28,21 @@ struct DogCardView: View {
             VStack {
                 HStack {
                     
-                    Text("Name")
+                    Text("\(dog.name)")
                         .font(.title2)
                         .fontWeight(.bold)
                         .foregroundStyle(.black)
                     
                     Spacer()
                     
-                    Text("age")
+                    Text("\(dog.age)")
                         .font(.title3)
                         .fontWeight(.semibold)
                         .foregroundStyle(.gray)
                 }
                 
                 HStack {
-                    Text("description")
+                    Text("\(dog.shortDescription)")
                         .font(.footnote)
                         .foregroundStyle(.gray)
                     
@@ -62,5 +64,5 @@ struct DogCardView: View {
 }
 
 #Preview {
-    DogCardView()
+    DogCardView(dog: Dog(image: UIImage(named: "dogCard")!, name: "Name", age: "Age", weight: "", shortDescription: "description", description: ""))
 }

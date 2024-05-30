@@ -9,12 +9,11 @@ import SwiftUI
 
 struct SignInView: View {
     
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @EnvironmentObject var signInData: SignInViewModel
     
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
             
             ZStack {
                 
@@ -25,8 +24,6 @@ struct SignInView: View {
                     Color("lightPurple")
                 }
                 .ignoresSafeArea()
-                
-                
                    
                 
                 VStack(spacing: 20) {
@@ -37,27 +34,52 @@ struct SignInView: View {
                         .frame(width: 200, height: 200)
                         .padding()
                    
-                    AuthorizationInputView(text: $email, title: "Email", placeholder: "example@gmail.com")
+                    AuthorizationInputView(text: $signInData.email, title: "Email", placeholder: "example@gmail.com")
                         .padding(.horizontal)
                     
-                    AuthorizationInputView(text: $password, title: "Password", placeholder: "Enter your password", isSecureField: true)
+                    AuthorizationInputView(text: $signInData.password, title: "Password", placeholder: "Enter your password", isSecureField: true)
                         .padding(.horizontal)
                     
                     
-                    NavigationLink(destination: ShelterTabView()) {
-                        
-                        HStack {
-                            Text("SING IN")
-                                .fontWeight(.semibold)
-                            Image(systemName: "arrow.right")
+//                    NavigationLink(destination: ShelterTabView()) {
+//                        
+//                        HStack {
+//                            Text("SING IN")
+//                                .fontWeight(.semibold)
+//                            Image(systemName: "arrow.right")
+//                        }
+//                        .foregroundStyle(.white)
+//                        .frame(width: UIScreen.main.bounds.width - 32, height: 48)
+//                        
+//                    }
+//                    .background(Color("lightGreen"))
+//                    .clipShape(RoundedRectangle(cornerRadius: 10))
+//                    .padding(.top, 24)
+                    
+                    Button(action: {
+                        signInData.signIn()
+                    }) {
+                        if signInData.isLoading {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color("lightGreen"))
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                        } else {
+                            HStack {
+                                Text("SING IN")
+                                    .fontWeight(.semibold)
+                                Image(systemName: "arrow.right")
+                            }
+                            .foregroundStyle(.white)
+                            .frame(width: UIScreen.main.bounds.width - 32, height: 48)
                         }
-                        .foregroundStyle(.white)
-                        .frame(width: UIScreen.main.bounds.width - 32, height: 48)
-                        
                     }
                     .background(Color("lightGreen"))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding(.top, 24)
+                    .disabled(signInData.isLoading)
                     
                     Spacer()
                     
@@ -75,6 +97,12 @@ struct SignInView: View {
                     }
                 }
             }
+            .navigationDestination(isPresented: $signInData.isSignedIn) {
+                UserTabView()
+            }
+            .alert(isPresented: $signInData.isAlert) {
+                Alert(title: Text("Ups"), message: Text("This user doesn't exist"), dismissButton: .default(Text("OK")))
+            }
             
         }
         .navigationBarBackButtonHidden(true)
@@ -84,4 +112,6 @@ struct SignInView: View {
 
 #Preview {
     SignInView()
+        .environmentObject(SignUpViewModel())
+        .environmentObject(SignInViewModel())
 }

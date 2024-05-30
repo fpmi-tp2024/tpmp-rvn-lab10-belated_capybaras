@@ -9,6 +9,8 @@ import SwiftUI
 
 struct UserDogsListView: View {
     
+    @EnvironmentObject var dogs: DogsViewModel
+    
     var body: some View {
         
         ZStack {
@@ -33,8 +35,8 @@ struct UserDogsListView: View {
                     
                     ForEach(1...10, id: \.self) { index in
                         
-                        NavigationLink(destination: DogProfileView()) {
-                            DogCardView()
+                        NavigationLink(destination: DogProfileView(dog: Dog(image: UIImage(named: "dogCard")!, name: "Name", age: "Age", weight: "weight", shortDescription: "description", description: "Name is an outgoing and playful companion who enjoys spending time outdoors, whether it's chasing a ball at the park or going for a swim in the nearest pond. He's always up for an adventure and loves exploring new places, especially if it means making new friends along the way."))) {
+                            DogCardView(dog: Dog(image: UIImage(named: "dogCard")!, name: "Name", age: "Age", weight: "", shortDescription: "description", description: ""))
                         }
                         
                     }
@@ -53,4 +55,7 @@ struct UserDogsListView: View {
 
 #Preview {
     UserDogsListView()
+        .environmentObject(SignUpViewModel())
+        .environmentObject(SignInViewModel())
+        .environmentObject(DogsViewModel())
 }

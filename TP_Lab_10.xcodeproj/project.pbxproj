@@ -35,6 +35,9 @@
 		A9BDFE1F2C079C980022427F /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BDFE1E2C079C980022427F /* SignInView.swift */; };
 		A9DCF0882C08FE2F008234CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCF0872C08FE2F008234CC /* User.swift */; };
 		A9DCF08C2C090932008234CC /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCF08B2C090932008234CC /* SignUpViewModel.swift */; };
+		A9DCF08E2C0921B1008234CC /* SigInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCF08D2C0921B1008234CC /* SigInViewModel.swift */; };
+		A9DCF0902C09358D008234CC /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCF08F2C09358D008234CC /* Dog.swift */; };
+		A9DCF0922C09377A008234CC /* DogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DCF0912C09377A008234CC /* DogsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		A9BDFE1E2C079C980022427F /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		A9DCF0872C08FE2F008234CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A9DCF08B2C090932008234CC /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		A9DCF08D2C0921B1008234CC /* SigInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigInViewModel.swift; sourceTree = "<group>"; };
+		A9DCF08F2C09358D008234CC /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		A9DCF0912C09377A008234CC /* DogsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				A9DCF0872C08FE2F008234CC /* User.swift */,
+				A9DCF08F2C09358D008234CC /* Dog.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,6 +259,8 @@
 			isa = PBXGroup;
 			children = (
 				A9DCF08B2C090932008234CC /* SignUpViewModel.swift */,
+				A9DCF08D2C0921B1008234CC /* SigInViewModel.swift */,
+				A9DCF0912C09377A008234CC /* DogsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -391,7 +400,9 @@
 				A94223D52C07C0A0008F6223 /* ShelterProfileView.swift in Sources */,
 				A9BDFE0F2C0746760022427F /* RoleChoiceView.swift in Sources */,
 				A9A3274E2C089372000F8140 /* OnboardingScreen1View.swift in Sources */,
+				A9DCF08E2C0921B1008234CC /* SigInViewModel.swift in Sources */,
 				A94223D32C07B72C008F6223 /* ProfilePropertyView.swift in Sources */,
+				A9DCF0922C09377A008234CC /* DogsViewModel.swift in Sources */,
 				A9A327402C085B7B000F8140 /* AddDogView.swift in Sources */,
 				A9BDFDDF2C0746070022427F /* TP_Lab_10App.swift in Sources */,
 				A9A3274A2C0868AE000F8140 /* UserTabView.swift in Sources */,
@@ -403,6 +414,7 @@
 				A9BDFE1D2C079C310022427F /* UserProfileView.swift in Sources */,
 				A9BDFE192C0781240022427F /* AuthorizationInputView.swift in Sources */,
 				A9BDFE112C074E3A0022427F /* DogCardView.swift in Sources */,
+				A9DCF0902C09358D008234CC /* Dog.swift in Sources */,
 				A9BDFE1F2C079C980022427F /* SignInView.swift in Sources */,
 				A9A327462C085E44000F8140 /* InputView.swift in Sources */,
 				A9BDFE172C0780AC0022427F /* SignUpView.swift in Sources */,

@@ -1,26 +1,32 @@
+//
+//  SigInViewModel.swift
+//  TP_Lab_10
+//
+//  Created by Даниил Соловьев on 31/05/2024.
+//
+
 import SwiftUI
 import Combine
 
-class SignUpViewModel: ObservableObject {
-    @Published var username: String = ""
+class SignInViewModel: ObservableObject {
+    
     @Published var email: String = ""
     @Published var password: String = ""
-    @Published var confirmPassword: String = ""
     @Published var errorMessage: String = ""
     @Published var isLoading: Bool = false
-    @Published var shouldNavigateToSignIn: Bool = false
+    @Published var isSignedIn: Bool = false
     @Published var isAlert: Bool = false
     var type: String = "users"
     
     private var cancellables = Set<AnyCancellable>()
     
-    func signUp() {
-        let url = URL(string: "https://970c-185-64-104-88.ngrok-free.app/\(type)/register")!
+    func signIn() {
+        let url = URL(string: "https://970c-185-64-104-88.ngrok-free.app/\(type)/login")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let body: [String: Any] = ["username": username, "email": email, "password": password]
+        let body: [String: Any] = ["email": email, "password": password]
         
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
@@ -39,40 +45,40 @@ class SignUpViewModel: ObservableObject {
                 }
                 switch httpResponse.statusCode {
                 case 200, 201:
-                    print("sign up code 201")
+                    print("sign in code 201")
                     DispatchQueue.main.async {
-                        print("Success sign up async")
-                        self.shouldNavigateToSignIn = true
+                        print("Success sign in async")
+                        self.isSignedIn = true
                     }
                     return result.data
                 case 400:
-                    print("sign up code 400")
-                    DispatchQueue.main.async {
-                        print("sign up code 400 async")
-                        self.isAlert = true
-                    }
                     throw CustomError.badRequest
                 case 401:
+                    print("sign in 401")
+                    DispatchQueue.main.async {
+                        print("sign in 401 async")
+                        self.isAlert = true
+                    }
                     throw CustomError.unauthorized
                 case 403:
                     throw CustomError.forbidden
                 case 500:
-                    print("sign up code 500")
+                    print("sign in 500")
                     DispatchQueue.main.async {
-                        print("sign up code 500 async")
+                        print("sign in 500 async")
                         self.isAlert = true
                     }
                     throw CustomError.internalServerError
                 default:
                     print("default sign in")
                     DispatchQueue.main.async {
-                        print("default sign up code async")
+                        print("default sign in async")
                         self.isAlert = true
                     }
                     throw URLError(.unknown)
                 }
             }
-            .decode(type: SignUpResponse.self, decoder: JSONDecoder())
+            .decode(type: SignInResponse.self, decoder: JSONDecoder())
             .sink(receiveCompletion: { completion in
                 self.isLoading = false
                 switch completion {
@@ -82,9 +88,9 @@ class SignUpViewModel: ObservableObject {
                     self.errorMessage = self.handleError(error)
                 }
             }, receiveValue: { response in
-                print("Sign-up successful: \(response)")
-                // Handle successful sign-up
-                self.shouldNavigateToSignIn = true // Trigger navigation
+                print("Sign-in successful: \(response)")
+                // Handle successful sign-in
+                self.isSignedIn = true // Trigger navigation or state change
             })
             .store(in: &self.cancellables)
     }
@@ -100,27 +106,9 @@ class SignUpViewModel: ObservableObject {
     }
 }
 
-enum CustomError: Error {
-    case badRequest
-    case unauthorized
-    case forbidden
-    case internalServerError
-    
-    var localizedDescription: String {
-        switch self {
-        case .badRequest:
-            return "Invalid request. Please check your data."
-        case .unauthorized:
-            return "Unauthorized. Please check your credentials."
-        case .forbidden:
-            return "Forbidden. You do not have permission to perform this action."
-        case .internalServerError:
-            return "Internal Server Error. Please try again later."
-        }
-    }
-}
-
-struct SignUpResponse: Decodable {
+struct SignInResponse: Decodable {
     let success: Bool
     let message: String
 }
+
+
