@@ -90,21 +90,20 @@ PetLink — это эффективный инструмент, объединя
 
 
 ## Полезные ссылки:
-
-
-## Файлы прописываемые в Make
+ - [Ссылка на разбор таблиц и данных в них](./docs/DataBase.md)
+ - [Ссылка на вспомогательный файл .md для GitHub Pages](./docs/index.md)
+ - [Ссылка на наш GitHubWiki](https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/wiki)
+- [Ссылка на схему бд](./docs/Diagrams/BDSceme.jpg)
+- [Cсылка на результаты build в Actions](./docs/buildCheck.md)
 
 
 ## Используемый язык программирвания,СУБД, IDE и т.д. :
-<img src="https://simpleicons.org/icons/swift.svg" alt="C++ Logo" width="100" height="100"> <img src="https://simpleicons.org/icons/sqlite.svg" alt="C++ Logo" width="100" height="100"> <img src="https://simpleicons.org/icons/go.svg" alt="C++ Logo" width="100" height="100"> <img src="https://simpleicons.org/icons/visualstudio.svg" alt="C++ Logo" width="100" height="100"> <img src="https://simpleicons.org/icons/git.svg" alt="C++ Logo" width="100" height="100">
-<img src="https://simpleicons.org/icons/xcode.svg" alt="C++ Logo" width="100" height="100">
+<img src="https://simpleicons.org/icons/swift.svg" alt="C++ Logo" width="150" height="150"> <img src="https://simpleicons.org/icons/sqlite.svg" alt="C++ Logo" width="150" height="150"> <img src="https://simpleicons.org/icons/go.svg" alt="C++ Logo" width="150" height="150"> <img src="https://simpleicons.org/icons/visualstudio.svg" alt="C++ Logo" width="150" height="150"> <img src="https://simpleicons.org/icons/git.svg" alt="C++ Logo" width="150" height="150">
+<img src="https://simpleicons.org/icons/xcode.svg" alt="C++ Logo" width="150" height="150">
 
 
 
-<br><br>
-<br><br>
-<br><br>
-<br><br>
+
 
 ## Видео демонстрация:
 
