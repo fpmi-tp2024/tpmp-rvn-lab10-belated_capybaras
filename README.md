@@ -45,7 +45,7 @@ PetLink — это эффективный инструмент, объединя
  ### Коротко о ней:
  - ***Assets.xcassets***: Содержит ассеты, такие как изображения и иконки, используемые в приложении.
 - ***Model*** Содержит модели данных, которые представляют структуру и свойства объектов, используемых в приложении.
-- ***Preview Content*** Содержит данные для предварительного просмотра SwiftUI в Xcode.
+- ***Preview Content***:* Содержит данные для предварительного просмотра SwiftUI в Xcode.
 - ***View*** Содержит представления (Views), которые отвечают за отображение пользовательского интерфейса.
 - ***ViewModel*** Содержит модели представлений (ViewModels), которые управляют данными и логикой, связанной с представлениями.
 
@@ -114,9 +114,9 @@ PetLink — это эффективный инструмент, объединя
 
 ## Видео демонстрация:
 
-[Скачать видео](https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/raw/devExiDola/docs/videoOfWork.mov)
+[Скачать видео](https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/blob/devExiDola/docs/videoOfWork.mov)
 
 <video width="560" height="315" controls>
-  <source src="https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/raw/devExiDola/docs/videoOfWork.mov" type="video/mp4">
+  <source src="https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/blob/devExiDola/docs/videoOfWork.mov" type="video/mp4">
   Your browser does not support the video tag.
 </video>
