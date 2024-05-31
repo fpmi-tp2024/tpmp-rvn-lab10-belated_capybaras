@@ -12,7 +12,7 @@ func main() {
 		panic(err)
 	}
 
-	store.AddMockDogInformation()
+	//store.AddMockDogInformation()
 
 	handle := handlers.NewHandler(store)
 	s := new(server.Server)

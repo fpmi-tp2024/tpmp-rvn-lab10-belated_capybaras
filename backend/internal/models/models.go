@@ -19,3 +19,13 @@ type Dog struct {
 	ShortDescription string `json:"shortDescription" db:"short_description"`
 	ShelterEmail     string `json:"shelter_email" db:"shelter_email"`
 }
+
+type Shelter struct {
+	Email       string `json:"email" db:"email"`
+	Password    string `json:"password" db:"password"`
+	Name        string `json:"name" db:"name"`
+	Username    string `json:"username" db:"username"`
+	Bill        string `json:"bill" db:"bill"`
+	Photo       []byte `json:"image" db:"photo"`
+	Description string `json:"description" db:"description"`
+}

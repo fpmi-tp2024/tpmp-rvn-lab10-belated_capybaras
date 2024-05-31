@@ -11,6 +11,8 @@ type Storer interface {
 	CheckUser(user models.User) error
 	GetDogs() ([]models.Dog, error)
 	DeleteDog(id int) error
+	AddShelter(shelter models.Shelter) error
+	CheckShelter(shelter models.Shelter) error
 }
 
 type Handler struct {
@@ -128,4 +130,58 @@ func (h *Handler) HandleTakeADog(w http.ResponseWriter, r *http.Request) {
 
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte("Dog taken successfully"))
+}
+
+func (h *Handler) HandleShelterRegister(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	var shelter models.Shelter
+	err := json.NewDecoder(r.Body).Decode(&shelter)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+
+	if shelter.Username == "" || shelter.Email == "" || shelter.Password == "" {
+		http.Error(w, "Missing required fields", http.StatusBadRequest)
+		return
+	}
+
+	err = h.storer.AddShelter(shelter)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	w.WriteHeader(http.StatusCreated)
+}
+
+func (h *Handler) HandleShelterLogin(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	var shelter models.Shelter
+	err := json.NewDecoder(r.Body).Decode(&shelter)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+
+	if shelter.Email == "" || shelter.Password == "" {
+		http.Error(w, "Missing required fields", http.StatusBadRequest)
+		return
+	}
+
+	err = h.storer.CheckShelter(shelter)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusUnauthorized)
+		return
+	}
+
+	w.WriteHeader(http.StatusOK)
 }
