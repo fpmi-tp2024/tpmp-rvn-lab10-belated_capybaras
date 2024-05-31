@@ -60,6 +60,3 @@
 #### Пример данных
 ![Данные о пользователях в схеме](./DataBases/Screenshots/usersScreen.jpg)
 
-<br><br><br><br>
-### Структура БД скриншотом из DB Browser for SQL:
-![Структура БД](./DataBases/Screenshots/struct.png)
