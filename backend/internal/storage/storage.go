@@ -27,8 +27,8 @@ func NewStorage() (*Storage, error) {
 }
 
 func (s *Storage) AddUser(user models.User) error {
-	_, err := s.db.Exec("INSERT INTO users (username, email, password, location_city, description, photo) VALUES ($1, $2, $3, $4, $5, $6)",
-		user.Username, user.Email, user.Password, user.City, user.Description, user.Photo)
+	_, err := s.db.Exec("INSERT INTO users (username, email, password, city, photo) VALUES ($1, $2, $3, $4, $5)",
+		user.Username, user.Email, user.Password, user.City, user.Photo)
 	if err != nil {
 		return err
 	}
@@ -55,7 +55,7 @@ func (s *Storage) AddMockDogInformation() {
 	shelterEmails := []string{"admin", "admin", "admin", "admin", "admin", "admin", "admin", "admin", "admin", "admin"}
 
 	for i := 0; i < 10; i++ {
-		imageData, err := ioutil.ReadFile(fmt.Sprintf("backend/src/%d.png", i+1))
+		imageData, err := ioutil.ReadFile(fmt.Sprintf("backend/src/dogs/%d.png", i+1))
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -106,4 +106,36 @@ func (s *Storage) CheckShelter(shelter models.Shelter) error {
 	}
 
 	return nil
+}
+
+func (s *Storage) UpdateUser(user models.User) error {
+	_, err := s.db.Exec("UPDATE users SET name=$1,surname=$2,city=$3,photo=$4 WHERE email=$5",
+		user.Name, user.Surname, user.City, user.Photo, user.Email)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (s *Storage) GetUserInfo(email string) (models.User, error) {
+	var user models.User
+	err := s.db.Get(&user, "SELECT * FROM users WHERE email=$1", email)
+	if err != nil {
+		return models.User{}, err
+	}
+
+	return user, nil
+}
+
+func (s *Storage) AddPhotoForMaxim() {
+	imageData, err := ioutil.ReadFile("backend/src/people/8.jpg")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	_, err = s.db.Exec("UPDATE users SET photo = $1 WHERE email = $2", imageData, "maximbaranovskiy@gmail.com")
+	if err != nil {
+		log.Fatal(err)
+	}
 }

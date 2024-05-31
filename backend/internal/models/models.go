@@ -1,12 +1,13 @@
 package models
 
 type User struct {
-	Username    string `json:"username" db:"username"`
-	Email       string `json:"email" db:"email"`
-	Password    string `json:"password" db:"password"`
-	City        string `json:"city" db:"location_city"`
-	Description string `json:"description" db:"description"`
-	Photo       []byte `json:"photo" db:"photo"`
+	Username string `json:"username" db:"username"`
+	Name     string `json:"name" db:"name"`
+	Surname  string `json:"surname" db:"surname"`
+	Email    string `json:"email" db:"email"`
+	Password string `json:"password" db:"password"`
+	City     string `json:"city" db:"city"`
+	Photo    []byte `json:"image" db:"photo"`
 }
 
 type Dog struct {

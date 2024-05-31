@@ -12,10 +12,11 @@ CREATE TABLE IF NOT EXISTS shelters(
 
 CREATE TABLE IF NOT EXISTS users (
                                      username TEXT NOT NULL,
+                                     name TEXT DEFAULT '',
+                                     surname TEXT DEFAULT '',
                                      email TEXT UNIQUE NOT NULL,
                                      password TEXT NOT NULL,
-                                     location_city TEXT DEFAULT '',
-                                     description TEXT DEFAULT '',
+                                     city TEXT DEFAULT '',
                                      photo BYTEA
 );
 
