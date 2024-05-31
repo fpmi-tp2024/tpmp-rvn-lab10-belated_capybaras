@@ -51,7 +51,7 @@ func (s *Storage) CheckUser(user models.User) error {
 func (s *Storage) AddMockDogInformation() {
 	// Замените на ваши данные
 	names := []string{"name1", "name2", "name3", "name4"}
-	ages := []int{1, 2, 3, 4}
+	ages := []string{"1", "2", "3", "4"}
 	weights := []float64{10.5, 20.5, 30.5, 40.5}
 	descriptions := []string{"description1", "description2", "description3", "description4"}
 	shortDescriptions := []string{"short_description1", "short_description2", "short_description3", "short_description4"}
@@ -81,4 +81,13 @@ func (s *Storage) GetDogs() ([]models.Dog, error) {
 	}
 
 	return dogs, nil
+}
+
+func (s *Storage) DeleteDog(id int) error {
+	_, err := s.db.Exec("DELETE FROM dogs WHERE id=$1", id)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

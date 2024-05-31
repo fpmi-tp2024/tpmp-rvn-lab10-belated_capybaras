@@ -10,6 +10,7 @@ type Storer interface {
 	AddUser(user models.User) error
 	CheckUser(user models.User) error
 	GetDogs() ([]models.Dog, error)
+	DeleteDog(id int) error
 }
 
 type Handler struct {
@@ -101,4 +102,30 @@ func (h *Handler) HandleGetDogs(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+}
+
+func (h *Handler) HandleTakeADog(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+
+	var data struct {
+		ID int `json:"id"`
+	}
+
+	err := json.NewDecoder(r.Body).Decode(&data)
+	if err != nil {
+		http.Error(w, "Invalid request body", http.StatusBadRequest)
+		return
+	}
+
+	err = h.storer.DeleteDog(data.ID)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte("Dog taken successfully"))
 }

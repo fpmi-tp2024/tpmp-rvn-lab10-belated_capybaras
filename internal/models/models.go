@@ -10,12 +10,12 @@ type User struct {
 }
 
 type Dog struct {
-	ID               int     `json:"id" db:"id"`
-	Name             string  `json:"name" db:"name"`
-	Age              int     `json:"age" db:"age"`
-	Weight           float64 `json:"weight" db:"weight"`
-	Photo            []byte  `json:"photo" db:"photo"`
-	Description      string  `json:"description" db:"description"`
-	ShortDescription string  `json:"short_description" db:"short_description"`
-	ShelterEmail     string  `json:"shelter_email" db:"shelter_email"`
+	ID               int    `json:"id" db:"id"`
+	Name             string `json:"name" db:"name"`
+	Age              string `json:"age" db:"age"`
+	Weight           string `json:"weight" db:"weight"`
+	Photo            []byte `json:"image" db:"photo"`
+	Description      string `json:"description" db:"description"`
+	ShortDescription string `json:"shortDescription" db:"short_description"`
+	ShelterEmail     string `json:"shelter_email" db:"shelter_email"`
 }

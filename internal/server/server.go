@@ -9,6 +9,7 @@ type Handler interface {
 	HandleUserRegister(w http.ResponseWriter, r *http.Request)
 	HandleUserLogin(w http.ResponseWriter, r *http.Request)
 	HandleGetDogs(w http.ResponseWriter, r *http.Request)
+	HandleTakeADog(w http.ResponseWriter, r *http.Request)
 }
 
 type Server struct {
@@ -35,4 +36,5 @@ func initRoutes(h Handler, mux *http.ServeMux) {
 	mux.HandleFunc("/users/register", h.HandleUserRegister)
 	mux.HandleFunc("/users/login", h.HandleUserLogin)
 	mux.HandleFunc("/dogs", h.HandleGetDogs)
+	mux.HandleFunc("/dogs/take", h.HandleTakeADog)
 }
