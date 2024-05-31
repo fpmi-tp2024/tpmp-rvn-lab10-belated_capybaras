@@ -93,9 +93,7 @@ PetLink — это эффективный инструмент, объединя
 
 
 ## Файлы прописываемые в Make
-![](https://img.shields.io/badge/*.cpp-main%2C_owner%2C_jockey%2C_database%2C_authentification%2C_admin-blue)
-![](https://img.shields.io/badge/*.h-main%2C_owner%2C_jockey%2C_database%2C_authentification%2C_admin-pink
-)
+
 
 ## Используемый язык программирвания,СУБД, IDE и т.д. :
 <img src="https://simpleicons.org/icons/swift.svg" alt="C++ Logo" width="100" height="100"> <img src="https://simpleicons.org/icons/sqlite.svg" alt="C++ Logo" width="100" height="100"> <img src="https://simpleicons.org/icons/go.svg" alt="C++ Logo" width="100" height="100"> <img src="https://simpleicons.org/icons/visualstudio.svg" alt="C++ Logo" width="100" height="100"> <img src="https://simpleicons.org/icons/git.svg" alt="C++ Logo" width="100" height="100">
@@ -108,4 +106,7 @@ PetLink — это эффективный инструмент, объединя
 <br><br>
 <br><br>
 ## Видео демонстрация:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<video width="560" height="315" controls>
+  <source src="https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/blob/devExiDola/docs/videoOfWork.mov">
+  Your browser does not support the video tag.
+</video>
