@@ -10,6 +10,7 @@ import SwiftUI
 struct DogProfileView: View {
     
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var dogsViewModel: DogsViewModel
     var dog: Dog
     
     var body: some View {
@@ -89,9 +90,9 @@ struct DogProfileView: View {
                         Spacer()
                         
                         Button {
-                            
+                            dogsViewModel.pickUp(dogID: dog.id)
                         } label: {
-                            Text("Take for a walk")
+                            Text("Pick up")
                                 .font(.title2)
                                 .fontWeight(.semibold)
                                 .foregroundStyle(.white)

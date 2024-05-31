@@ -21,7 +21,7 @@ class SignInViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     func signIn() {
-        let url = URL(string: "https://970c-185-64-104-88.ngrok-free.app/\(type)/login")!
+        let url = URL(string: "https://52aa-185-64-104-96.ngrok-free.app/\(type)/login")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
