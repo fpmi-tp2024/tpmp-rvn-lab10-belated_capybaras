@@ -25,7 +25,7 @@ struct DogProfileView: View {
                 ScrollView {
                     
                     VStack {
-                        Image(uiImage: dog.image)
+                        Image(uiImage: UIImage(data: dog.image)!)
                             .resizable()
                             .scaledToFill()
                             .frame(width: UIScreen.main.bounds.width - 30, height:UIScreen.main.bounds.width - 30)
@@ -126,5 +126,5 @@ struct DogProfileView: View {
 }
 
 #Preview {
-    DogProfileView(dog: Dog(image: UIImage(named: "dogCard")!, name: "Name", age: "Age", weight: "weight", shortDescription: "description", description: "Name is an outgoing and playful companion who enjoys spending time outdoors, whether it's chasing a ball at the park or going for a swim in the nearest pond. He's always up for an adventure and loves exploring new places, especially if it means making new friends along the way."))
+    DogProfileView(dog: Dog(id: 1, image: Data(UIImage(named: "dogCard")!.pngData()!), name: "Name", age: "Age", weight: "weight", shortDescription: "description", description: "Name is an outgoing and playful companion who enjoys spending time outdoors, whether it's chasing a ball at the park or going for a swim in the nearest pond. He's always up for an adventure and loves exploring new places, especially if it means making new friends along the way."))
 }

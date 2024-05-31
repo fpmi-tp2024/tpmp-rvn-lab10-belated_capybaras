@@ -15,7 +15,7 @@ struct DogCardView: View {
         
         VStack {
             
-            Image(uiImage: dog.image)
+            Image(uiImage: UIImage(data: dog.image)!)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 170, height: 120)
@@ -64,5 +64,5 @@ struct DogCardView: View {
 }
 
 #Preview {
-    DogCardView(dog: Dog(image: UIImage(named: "dogCard")!, name: "Name", age: "Age", weight: "", shortDescription: "description", description: ""))
+    DogCardView(dog: Dog(id: 1, image: Data(UIImage(named: "dogCard")!.pngData()!), name: "Name", age: "Age", weight: "", shortDescription: "description", description: ""))
 }

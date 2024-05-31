@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isLoaded = false
+    @EnvironmentObject var dogsViewModel: DogsViewModel
     var body: some View {
         
         Group {
@@ -22,6 +23,7 @@ struct ContentView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 withAnimation {
                     isLoaded = true
+                    dogsViewModel.fetchData()
                 }
             }
         }
@@ -30,4 +32,7 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environmentObject(SignUpViewModel())
+        .environmentObject(SignInViewModel())
+        .environmentObject(DogsViewModel())
 }

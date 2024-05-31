@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
-struct Dog: Identifiable {
-    let id = UUID()
-    var image: UIImage
+struct Dog: Identifiable, Decodable {
+    var id: Int
+    var image: Data
     var name: String
     var age: String
     var weight: String

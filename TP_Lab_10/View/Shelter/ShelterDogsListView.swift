@@ -43,7 +43,7 @@ struct ShelterDogsListView: View {
                             } label: {
                                 ZStack(alignment: .topLeading) {
                                     
-                                    DogCardView(dog: Dog(image: UIImage(named: "dogCard")!, name: "Name", age: "Age", weight: "", shortDescription: "description", description: ""))
+                                    DogCardView(dog: Dog(id: 1, image: Data(UIImage(named: "dogCard")!.pngData()!), name: "Name", age: "Age", weight: "", shortDescription: "description", description: ""))
                                     
                                     Button {
                                         
