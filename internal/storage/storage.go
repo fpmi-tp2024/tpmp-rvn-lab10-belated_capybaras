@@ -18,12 +18,9 @@ func NewStorage() (*Storage, error) {
 		return nil, err
 	}
 
-	log.Println("AAAAAAAAAAAAAAAAAa")
 	if err = db.Ping(); err != nil {
 		return nil, err
 	}
-
-	log.Println("Connected to database")
 
 	return &Storage{db}, nil
 }
@@ -49,7 +46,6 @@ func (s *Storage) CheckUser(user models.User) error {
 }
 
 func (s *Storage) AddMockDogInformation() {
-	// Замените на ваши данные
 	names := []string{"name1", "name2", "name3", "name4"}
 	ages := []string{"1", "2", "3", "4"}
 	weights := []float64{10.5, 20.5, 30.5, 40.5}
@@ -58,13 +54,11 @@ func (s *Storage) AddMockDogInformation() {
 	shelterEmails := []string{"admin", "admin", "admin", "admin"}
 
 	for i := 0; i < 4; i++ {
-		// Загрузка изображения
 		imageData, err := ioutil.ReadFile("src/" + "1.jpg")
 		if err != nil {
 			log.Fatal(err)
 		}
 
-		// Вставка данных в таблицу
 		_, err = s.db.Exec("INSERT INTO dogs (name, age, weight, photo, description, short_description, shelter_email) VALUES ($1, $2, $3, $4, $5, $6, $7)",
 			names[i], ages[i], weights[i], imageData, descriptions[i], shortDescriptions[i], shelterEmails[i])
 		if err != nil {
