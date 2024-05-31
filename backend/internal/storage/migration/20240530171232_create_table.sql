@@ -1,23 +1,23 @@
 -- +goose Up
 -- +goose StatementBegin
-CREATE TABLE IF NOT EXISTS users (
-                                     username TEXT NOT NULL,
-                                     email TEXT UNIQUE NOT NULL,
-                                     password TEXT NOT NULL,
-                                     location_city TEXT DEFAULT '',
-                                     description TEXT DEFAULT '',
-                                     photo BYTEA
-);
-
 CREATE TABLE IF NOT EXISTS shelters(
                                        username TEXT NOT NULL,
                                        password TEXT NOT NULL,
                                        email TEXT UNIQUE NOT NULL,
                                        name TEXT Default '',
-                                       location_city TEXT Default '',
                                        bill TEXT Default '',
                                        description TEXT Default '',
                                        photo BYTEA
+);
+
+CREATE TABLE IF NOT EXISTS users (
+                                     username TEXT NOT NULL,
+                                     name TEXT DEFAULT '',
+                                     surname TEXT DEFAULT '',
+                                     email TEXT UNIQUE NOT NULL,
+                                     password TEXT NOT NULL,
+                                     city TEXT DEFAULT '',
+                                     photo BYTEA
 );
 
 CREATE TABLE IF NOT EXISTS dogs(

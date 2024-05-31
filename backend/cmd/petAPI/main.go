@@ -12,7 +12,8 @@ func main() {
 		panic(err)
 	}
 
-	store.AddMockDogInformation()
+	//store.AddMockDogInformation()
+	//store.AddPhotoForMaxim()
 
 	handle := handlers.NewHandler(store)
 	s := new(server.Server)
