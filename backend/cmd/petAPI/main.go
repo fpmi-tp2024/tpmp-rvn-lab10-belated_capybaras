@@ -1,9 +1,9 @@
 package main
 
 import (
-	"petAPI/internal/handlers"
-	"petAPI/internal/server"
-	"petAPI/internal/storage"
+	"petAPI/backend/internal/handlers"
+	"petAPI/backend/internal/server"
+	"petAPI/backend/internal/storage"
 )
 
 func main() {

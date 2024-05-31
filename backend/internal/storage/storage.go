@@ -5,7 +5,7 @@ import (
 	_ "github.com/lib/pq"
 	"io/ioutil"
 	"log"
-	"petAPI/internal/models"
+	"petAPI/backend/internal/models"
 )
 
 type Storage struct {

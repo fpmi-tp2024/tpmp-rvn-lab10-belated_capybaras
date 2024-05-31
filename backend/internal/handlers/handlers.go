@@ -3,7 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
-	"petAPI/internal/models"
+	"petAPI/backend/internal/models"
 )
 
 type Storer interface {
