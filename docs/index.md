@@ -30,11 +30,13 @@
 
 1. [Информация в Базах Данных(документ со всеми данными в виде скриншотов)](./DataBase.md)
 
- 2. [XML диаграмма классов](./Diagrams/XML_class_diagramm.png)
+ 2. [XML диаграмма классов](./Diagrams/classDiagramm.png)
 
- 3. [XML диаграмма серверной части](./Diagrams/XML_serverPart_Diagramm.png)
+ 3. [XML диаграмма действий](./Diagrams/ActionsDiagramm.png)
 
- 4. [XML диаграмма клиентской части](./Diagrams/XML_UserPart_Diagramm.png)
+ 4. [XML диаграмма  последовательностей](./Diagrams/XML_UserPart_Diagramm.png)
+
+ 4. [XML диаграмма  состояния](./Diagrams/StateDiagramm.png)
 
  5. [Cсылка на результаты build в Actions](./buildCheck.md)
 
