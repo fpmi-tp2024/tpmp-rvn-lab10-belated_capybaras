@@ -105,6 +105,8 @@ enum CustomError: Error {
     case unauthorized
     case forbidden
     case internalServerError
+    case networkError(Error) // New case for network errors
+    case invalidResponse // New case for invalid response
     
     var localizedDescription: String {
         switch self {
@@ -116,6 +118,10 @@ enum CustomError: Error {
             return "Forbidden. You do not have permission to perform this action."
         case .internalServerError:
             return "Internal Server Error. Please try again later."
+        case .networkError(let error):
+            return "Network error occurred: \(error.localizedDescription)" // Updated for network error
+        case .invalidResponse:
+            return "Invalid response received from server." // New localized description for invalid response
         }
     }
 }

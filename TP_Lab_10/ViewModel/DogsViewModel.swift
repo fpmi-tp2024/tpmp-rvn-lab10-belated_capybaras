@@ -14,14 +14,13 @@ class DogsViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     func fetchData() {
-        guard let url = URL(string: "https://your-api-url.com/dogs") else {
+        guard let url = URL(string: "https://970c-185-64-104-88.ngrok-free.app/dogs") else {
                 print("Invalid URL")
                 return
             }
             
             URLSession.shared.dataTaskPublisher(for: url)
                 .mapError { error in
-                    // Map URLError to a custom error for better error handling
                     CustomError.networkError(error)
                 }
                 .flatMap { data, response -> AnyPublisher<Data, CustomError> in
@@ -31,7 +30,7 @@ class DogsViewModel: ObservableObject {
                     
                     switch httpResponse.statusCode {
                     case 200...299:
-                        // Success status code range, proceed with decoding
+                        print("200-299 in downloading images")
                         return Just(data)
                             .setFailureType(to: CustomError.self)
                             .eraseToAnyPublisher()
@@ -41,11 +40,8 @@ class DogsViewModel: ObservableObject {
                         return Fail(error: CustomError.unauthorized).eraseToAnyPublisher()
                     case 403:
                         return Fail(error: CustomError.forbidden).eraseToAnyPublisher()
-                    case 404:
-                        return Fail(error: CustomError.notFound).eraseToAnyPublisher()
                     default:
-                        // Handle other status codes as needed
-                        return Fail(error: CustomError.unknown).eraseToAnyPublisher()
+                        return Fail(error: CustomError.badRequest).eraseToAnyPublisher()
                     }
                 }
                 .decode(type: [Dog].self, decoder: JSONDecoder())
