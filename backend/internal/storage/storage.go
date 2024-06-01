@@ -139,3 +139,43 @@ func (s *Storage) AddPhotoForMaxim() {
 		log.Fatal(err)
 	}
 }
+
+func (s *Storage) GetShelterDogs(email string) ([]models.Dog, error) {
+	dogs := []models.Dog{}
+	err := s.db.Select(&dogs, "SELECT * FROM dogs WHERE shelter_email=$1", email)
+	if err != nil {
+		return nil, err
+	}
+
+	return dogs, nil
+}
+
+func (s *Storage) GetShelterInfo(email string) (models.Shelter, error) {
+	var shelter models.Shelter
+	err := s.db.Get(&shelter, "SELECT * FROM shelters WHERE email=$1", email)
+	if err != nil {
+		return models.Shelter{}, err
+	}
+
+	return shelter, nil
+}
+
+func (s *Storage) UpdateShelter(shelter models.Shelter) error {
+	_, err := s.db.Exec("UPDATE shelters SET name=$1,bill=$2,photo=$3,description=$4 WHERE email=$5",
+		shelter.Username, shelter.Bill, shelter.Photo, shelter.Description, shelter.Email)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (s *Storage) AddDog(dog models.Dog) error {
+	_, err := s.db.Exec("INSERT INTO dogs (name, age, weight, photo, description, short_description, shelter_email) VALUES ($1, $2, $3, $4, $5, $6, $7)",
+		dog.Name, dog.Age, dog.Weight, dog.Photo, dog.Description, dog.ShortDescription, dog.ShelterEmail)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}

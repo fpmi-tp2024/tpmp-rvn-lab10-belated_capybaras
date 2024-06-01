@@ -14,6 +14,10 @@ type Handler interface {
 	HandleShelterRegister(w http.ResponseWriter, r *http.Request)
 	HandleShelterLogin(w http.ResponseWriter, r *http.Request)
 	HandleUpdateUser(w http.ResponseWriter, r *http.Request)
+	HandleGetShelterDogs(w http.ResponseWriter, r *http.Request)
+	HandleGetShelterInfo(w http.ResponseWriter, r *http.Request)
+	HandleUpdateShelter(w http.ResponseWriter, r *http.Request)
+	HandleAddDog(w http.ResponseWriter, r *http.Request)
 }
 
 type Server struct {
@@ -45,4 +49,8 @@ func initRoutes(h Handler, mux *http.ServeMux) {
 	mux.HandleFunc("/shelters/login", h.HandleShelterLogin)
 	mux.HandleFunc("/users/update", h.HandleUpdateUser)
 	mux.HandleFunc("/users/info", h.HandleGetUserInfo)
+	mux.HandleFunc("/shelters/dogs", h.HandleGetShelterDogs)
+	mux.HandleFunc("/shelters/info", h.HandleGetShelterInfo)
+	mux.HandleFunc("/shelters/update", h.HandleUpdateShelter)
+	mux.HandleFunc("/dogs/new", h.HandleAddDog)
 }
