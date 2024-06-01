@@ -122,3 +122,8 @@ PetLink — это эффективный инструмент, объединя
   <source src="https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/blob/devExiDola/docs/videoOfWork.mov" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+
+<video width="560" height="315" controls>
+  <source src="https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/blob/devExiDola/docs/videoOfWork2.mov" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
