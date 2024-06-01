@@ -20,7 +20,7 @@ struct MapView: View {
         PointOfInterest(name: "Near Minsk", coordinate: CLLocationCoordinate2D(latitude: 53.9153, longitude: 27.6622)),
         PointOfInterest(name: "Near Minsk 2", coordinate: CLLocationCoordinate2D(latitude: 53.9247, longitude: 27.5668)),
         PointOfInterest(name: "Near Minsk 3", coordinate: CLLocationCoordinate2D(latitude: 53.9079, longitude: 27.4683)),
-        PointOfInterest(name: "Near Minsk 4", coordinate: CLLocationCoordinate2D(latitude: 53.9479, longitude: 27.4683))
+        PointOfInterest(name: "Near Minsk 4", coordinate: CLLocationCoordinate2D(latitude: 53.9529, longitude: 27.4683))
     ]
     
     var body: some View {

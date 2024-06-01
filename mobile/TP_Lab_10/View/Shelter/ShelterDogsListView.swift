@@ -10,6 +10,7 @@ import SwiftUI
 struct ShelterDogsListView: View {
     
     @EnvironmentObject var dogsVM: DogsViewModel
+    @EnvironmentObject var shelterVM: ShelterViewModel
     
     var body: some View {
         
@@ -45,6 +46,7 @@ struct ShelterDogsListView: View {
                                 DogCardView(dog: dog)
                                 
                                 Button {
+                                    dogsVM.pickUpShelter(dogID: dog.id)
                                     
                                 } label: {
                                     Image(systemName: "xmark")
@@ -85,6 +87,12 @@ struct ShelterDogsListView: View {
                 }
                 
                 
+            }
+            .onAppear {
+                if isFirstTimeOnShelterListView {
+                    dogsVM.fetchDataForShelter(email: shelterVM.shelter.email)
+                    isFirstTimeOnShelterListView = false
+                }
             }
         }
         .navigationBarBackButtonHidden(true)

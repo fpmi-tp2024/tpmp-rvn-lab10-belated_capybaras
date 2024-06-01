@@ -16,82 +16,143 @@ class SignInViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var isSignedIn: Bool = false
     @Published var isAlert: Bool = false
+   // @Published var user: User = User()
+    
     
     private var cancellables = Set<AnyCancellable>()
     
     func signIn(urlStr: String) {
-        let url = URL(string: urlStr)!
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        
+//        guard let url = URL(string: "\(serverURL)/users/login") else {
+//            errorMessage = "Invalid URL."
+//            return
+//        }
+//        
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//        
+//        let body: [String: Any] = ["email": email, "password": password]
+//        
+//        do {
+//            request.httpBody = try JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+//        } catch {
+//            errorMessage = "Failed to encode request body."
+//            return
+//        }
+//        
+//        isLoading = true
+//        
+//        URLSession.shared.dataTaskPublisher(for: request)
+//            .receive(on: DispatchQueue.main)
+//            .tryMap { result -> Data in
+//                guard let httpResponse = result.response as? HTTPURLResponse else {
+//                    throw URLError(.badServerResponse)
+//                }
+//                switch httpResponse.statusCode {
+//                case 200, 201:
+//                    print("User is signed in")
+//                    return result.data
+//                case 400:
+//                    throw CustomError.badRequest
+//                case 401:
+//                    throw CustomError.unauthorized
+//                case 403:
+//                    throw CustomError.forbidden
+//                case 500:
+//                    throw CustomError.internalServerError
+//                default:
+//                    throw URLError(.unknown)
+//                }
+//            }
+//            .decode(type: User.self, decoder: JSONDecoder())
+//            .sink(receiveCompletion: { completion in
+//                self.isLoading = false
+//                switch completion {
+//                case .finished:
+//                    self.errorMessage = ""
+//                case .failure(let error):
+//                    self.errorMessage = self.handleError(error)
+//                }
+//            }, receiveValue: { user in
+//                self.user = user
+//                self.isSignedIn = true // Trigger navigation or state change
+//            })
+//            .store(in: &self.cancellables)
+//    
         
-        let body: [String: Any] = ["email": email, "password": password]
+                let url = URL(string: urlStr)!
+                var request = URLRequest(url: url)
+                request.httpMethod = "POST"
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
-        } catch {
-            errorMessage = "Failed to encode request body."
-            return
-        }
+                let body: [String: Any] = ["email": email, "password": password]
         
-        isLoading = true
-        
-        URLSession.shared.dataTaskPublisher(for: request)
-            .receive(on: DispatchQueue.main)
-            .tryMap { result -> Data in
-                guard let httpResponse = result.response as? HTTPURLResponse else {
-                    throw URLError(.badServerResponse)
+                do {
+                    request.httpBody = try JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+                } catch {
+                    errorMessage = "Failed to encode request body."
+                    return
                 }
-                switch httpResponse.statusCode {
-                case 200, 201:
-                    print("sign in code 201")
-                    DispatchQueue.main.async {
-                        print("Success sign in async")
-                        self.isSignedIn = true
+        
+                isLoading = true
+        
+                URLSession.shared.dataTaskPublisher(for: request)
+                    .receive(on: DispatchQueue.main)
+                    .tryMap { result -> Data in
+                        guard let httpResponse = result.response as? HTTPURLResponse else {
+                            throw URLError(.badServerResponse)
+                        }
+                        switch httpResponse.statusCode {
+                        case 200, 201:
+                            print("sign in code 201")
+                            DispatchQueue.main.async {
+                                print("Success sign in async")
+                                self.isSignedIn = true
+                            }
+                            return result.data
+                        case 400:
+                            throw CustomError.badRequest
+                        case 401:
+                            print("sign in 401")
+                            DispatchQueue.main.async {
+                                print("sign in 401 async")
+                                self.isAlert = true
+                            }
+                            throw CustomError.unauthorized
+                        case 403:
+                            throw CustomError.forbidden
+                        case 500:
+                            print("sign in 500")
+                            DispatchQueue.main.async {
+                                print("sign in 500 async")
+                                self.isAlert = true
+                            }
+                            throw CustomError.internalServerError
+                        default:
+                            print("default sign in")
+                            DispatchQueue.main.async {
+                                print("default sign in async")
+                                self.isAlert = true
+                            }
+                            throw URLError(.unknown)
+                        }
                     }
-                    return result.data
-                case 400:
-                    throw CustomError.badRequest
-                case 401:
-                    print("sign in 401")
-                    DispatchQueue.main.async {
-                        print("sign in 401 async")
-                        self.isAlert = true
-                    }
-                    throw CustomError.unauthorized
-                case 403:
-                    throw CustomError.forbidden
-                case 500:
-                    print("sign in 500")
-                    DispatchQueue.main.async {
-                        print("sign in 500 async")
-                        self.isAlert = true
-                    }
-                    throw CustomError.internalServerError
-                default:
-                    print("default sign in")
-                    DispatchQueue.main.async {
-                        print("default sign in async")
-                        self.isAlert = true
-                    }
-                    throw URLError(.unknown)
-                }
-            }
-            .decode(type: SignInResponse.self, decoder: JSONDecoder())
-            .sink(receiveCompletion: { completion in
-                self.isLoading = false
-                switch completion {
-                case .finished:
-                    self.errorMessage = ""
-                case .failure(let error):
-                    self.errorMessage = self.handleError(error)
-                }
-            }, receiveValue: { response in
-                print("Sign-in successful: \(response)")
-                // Handle successful sign-in
-                self.isSignedIn = true // Trigger navigation or state change
-            })
-            .store(in: &self.cancellables)
+                    .decode(type: SignInResponse.self, decoder: JSONDecoder())
+                    .sink(receiveCompletion: { completion in
+                        self.isLoading = false
+                        switch completion {
+                        case .finished:
+                            self.errorMessage = ""
+                        case .failure(let error):
+                            self.errorMessage = self.handleError(error)
+                        }
+                    }, receiveValue: { response in
+                        print("Sign-in successful: \(response)")
+                        // Handle successful sign-in
+                        self.isSignedIn = true // Trigger navigation or state change
+                    })
+                    .store(in: &self.cancellables)
     }
     
     private func handleError(_ error: Error) -> String {

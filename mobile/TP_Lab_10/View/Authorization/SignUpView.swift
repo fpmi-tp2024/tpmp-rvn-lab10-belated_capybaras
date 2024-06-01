@@ -119,7 +119,7 @@ struct SignUpView: View {
         if accountStatusVM.accountStatus == .user {
             return "users"
         } else if accountStatusVM.accountStatus == .shelter {
-            return "users"
+            return "shelters"
         } else {
             return "undefined"
         }
