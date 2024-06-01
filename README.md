@@ -97,6 +97,7 @@ PetLink — это эффективный инструмент, объединя
 ![](./docs/Diagrams/Sceme.png)
 
 ## Полезные ссылки:
+-[Ссылка на gitHubPages](https://fpmi-tp2024.github.io/tpmp-rvn-lab10-belated_capybaras/)
  - [Ссылка на разбор таблиц и данных в них](./docs/DataBase.md)
  - [Ссылка на вспомогательный файл .md для GitHub Pages](./docs/index.md)
  - [Ссылка на наш GitHubWiki](https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/wiki)
