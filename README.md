@@ -116,7 +116,7 @@ PetLink — это эффективный инструмент, объединя
 
 [Скачать перовое видео реализации](https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/blob/devExiDola/docs/videoOfWork.mov)
 
-[Скачать второе видео реализации](https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/blob/devExiDola/docs/videoOfWork.mov)
+[Скачать второе видео реализации](https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/blob/devExiDola/docs/videoOfWork2.mov)
 
 <video width="560" height="315" controls>
   <source src="https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/blob/devExiDola/docs/videoOfWork.mov" type="video/mp4">
