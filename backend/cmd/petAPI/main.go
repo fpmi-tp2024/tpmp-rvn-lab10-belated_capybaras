@@ -14,6 +14,7 @@ func main() {
 
 	//store.AddMockDogInformation()
 	//store.AddPhotoForMaxim()
+	store.AddPhotoForSaveAnimals()
 
 	handle := handlers.NewHandler(store)
 	s := new(server.Server)

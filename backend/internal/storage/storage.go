@@ -180,3 +180,15 @@ func (s *Storage) AddDog(dog models.Dog) (int, error) {
 
 	return id, nil
 }
+
+func (s *Storage) AddPhotoForSaveAnimals() {
+	imageData, err := ioutil.ReadFile("backend/src/shelter/1.jpg")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	_, err = s.db.Exec("UPDATE shelters SET photo = $1 WHERE email = $2", imageData, "saveAnimals@gmail.com")
+	if err != nil {
+		log.Fatal(err)
+	}
+}
