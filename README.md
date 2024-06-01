@@ -97,6 +97,7 @@ PetLink — это эффективный инструмент, объединя
 ![](./docs/Diagrams/Sceme.png)
 
 ## Полезные ссылки:
+-[Ссылка на gitHubPages](https://fpmi-tp2024.github.io/tpmp-rvn-lab10-belated_capybaras/)
  - [Ссылка на разбор таблиц и данных в них](./docs/DataBase.md)
  - [Ссылка на вспомогательный файл .md для GitHub Pages](./docs/index.md)
  - [Ссылка на наш GitHubWiki](https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/wiki)
@@ -114,9 +115,16 @@ PetLink — это эффективный инструмент, объединя
 
 ## Видео демонстрация:
 
-[Скачать видео](https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/blob/devExiDola/docs/videoOfWork.mov)
+[Скачать перовое видео реализации](https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/blob/devExiDola/docs/videoOfWork.mov)
+
+[Скачать второе видео реализации](https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/blob/devExiDola/docs/videoOfWork2.mov)
 
 <video width="560" height="315" controls>
   <source src="https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/blob/devExiDola/docs/videoOfWork.mov" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video width="560" height="315" controls>
+  <source src="https://github.com/fpmi-tp2024/tpmp-rvn-lab10-belated_capybaras/blob/devExiDola/docs/videoOfWork2.mov" type="video/mp4">
   Your browser does not support the video tag.
 </video>
