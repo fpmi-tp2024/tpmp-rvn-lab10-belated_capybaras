@@ -13,4 +13,7 @@ enum AccountStatus {
     case undefined
 }
 
-let serverURL = "https://7b2a-79-170-109-138.ngrok-free.app"
+let serverURL = "https://118a-194-99-105-90.ngrok-free.app"
+var isFirstTimeOnProfileView = true
+var isFirstTimeOnShleterProfileVew = true
+var isFirstTimeOnShelterListView = true

@@ -11,6 +11,8 @@ struct SignInView: View {
     
     @EnvironmentObject var signInData: SignInViewModel
     @EnvironmentObject var accountStatusVM: AccountStatusViewModel
+    @EnvironmentObject var userVM: UserViewModel
+    @EnvironmentObject var sheletVM: ShelterViewModel
     
     var body: some View {
         
@@ -58,6 +60,13 @@ struct SignInView: View {
 //                    .padding(.top, 24)
                     
                     Button(action: {
+                        if accountStatusVM.accountStatus == .user {
+                            userVM.user.email = signInData.email
+                        } else if accountStatusVM.accountStatus == .shelter {
+                            sheletVM.shelter.email = signInData.email
+                        } else {
+                            userVM.user.email = signInData.email
+                        }
                         signInData.signIn(urlStr: urlStr)
                     }) {
                         if signInData.isLoading {
@@ -117,7 +126,7 @@ struct SignInView: View {
         if accountStatusVM.accountStatus == .user {
             return "users"
         } else if accountStatusVM.accountStatus == .shelter {
-            return "users"
+            return "shelters"
         } else {
             return "undefined"
         }

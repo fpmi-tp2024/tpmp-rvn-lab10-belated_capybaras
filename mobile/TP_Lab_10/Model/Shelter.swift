@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct Shelter: Decodable {
+struct Shelter: Codable {
     var name: String = ""
     var bill: String = ""
     var username: String = ""
-    var email: String = ""
+    var email: String = "admin"
     var description: String = ""
+    var image: Data = Data()
 }

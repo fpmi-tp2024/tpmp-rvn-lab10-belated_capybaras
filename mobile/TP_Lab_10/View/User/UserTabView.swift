@@ -9,6 +9,8 @@ import SwiftUI
 
 struct UserTabView: View {
     
+    @EnvironmentObject var userVM: UserViewModel
+    
     init() {
         // Customize tab bar appearance
         let appearance = UITabBarAppearance()
@@ -43,7 +45,7 @@ struct UserTabView: View {
                         Label("Near", image: "globeIcon")
                     }
                     .tag(Tab.near)
-                    
+                
                 
                 UserProfileView()
                     .tabItem {
@@ -57,8 +59,11 @@ struct UserTabView: View {
             
         }
         .navigationBarBackButtonHidden(true)
+
         
     }
+    
+    
 }
 
 #Preview {

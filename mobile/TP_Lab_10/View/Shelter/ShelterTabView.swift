@@ -28,7 +28,7 @@ struct ShelterTabView: View {
         }
     }
     
-    @State private var selectedTab: Tab = .pets
+    @State private var selectedTab: Tab = .profile
     
     var body: some View {
         

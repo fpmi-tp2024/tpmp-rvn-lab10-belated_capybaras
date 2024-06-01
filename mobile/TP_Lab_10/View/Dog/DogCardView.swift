@@ -15,7 +15,7 @@ struct DogCardView: View {
         
         VStack {
             
-            Image(uiImage: UIImage(data: dog.image)!)
+            Image(uiImage: UIImage(data: dog.image) ?? UIImage(named: "dogCard")!)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 170, height: 120)
@@ -29,22 +29,32 @@ struct DogCardView: View {
                 HStack {
                     
                     Text("\(dog.name)")
-                        .font(.title2)
+                        .font(.system(size: 17))
                         .fontWeight(.bold)
                         .foregroundStyle(.black)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                        //.frame(width: 85)
                     
                     Spacer()
                     
                     Text("\(dog.age)")
-                        .font(.title3)
+                        .font(.system(size: 14))
                         .fontWeight(.semibold)
                         .foregroundStyle(.gray)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                        //.frame(width: 55)
+                        
                 }
                 
                 HStack {
                     Text("\(dog.shortDescription)")
-                        .font(.footnote)
+                        .font(.system(size: 12))
                         .foregroundStyle(.gray)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                    
                     
                     Spacer()
                 }
@@ -64,7 +74,7 @@ struct DogCardView: View {
 }
 
 #Preview {
-    DogCardView(dog: Dog(id: 1, image: Data(UIImage(named: "dogCard")!.pngData()!), name: "Name", age: "Age", weight: "", shortDescription: "description", description: ""))
+    DogCardView(dog: Dog(id: 1, image: Data(UIImage(named: "dogCard")!.pngData()!), name: "Name xcvvxcsd", age: "Age dsvdsv", weight: "", shortDescription: "description dsvsddsdsffdssf", description: ""))
         .environmentObject(SignUpViewModel())
         .environmentObject(SignInViewModel())
         .environmentObject(DogsViewModel())

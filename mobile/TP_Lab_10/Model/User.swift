@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct User: Decodable {
+struct User: Codable {
     var name: String = ""
     var surname: String = ""
-    var username: String = ""
-    var email: String = ""
+    var username: String = " "
+    var email: String = "example@gmail.com"
     var city: String = ""
+    var image: Data = Data()
 }

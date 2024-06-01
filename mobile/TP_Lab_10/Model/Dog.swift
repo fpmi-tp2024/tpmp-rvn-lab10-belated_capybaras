@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Dog: Identifiable, Decodable {
+struct Dog: Identifiable, Codable {
     var id: Int
     var image: Data
     var name: String
