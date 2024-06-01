@@ -19,7 +19,7 @@ type Storer interface {
 	GetShelterDogs(email string) ([]models.Dog, error)
 	GetShelterInfo(email string) (models.Shelter, error)
 	UpdateShelter(shelter models.Shelter) error
-	AddDog(dog models.Dog) error
+	AddDog(dog models.Dog) (int, error)
 }
 
 type Handler struct {
@@ -373,21 +373,37 @@ func (h *Handler) HandleAddDog(w http.ResponseWriter, r *http.Request) {
 	var dog models.Dog
 	err := json.NewDecoder(r.Body).Decode(&dog)
 	if err != nil {
+		fmt.Println(err)
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 
 	if dog.Name == "" || dog.ShelterEmail == "" {
+		fmt.Println(err)
 		http.Error(w, "Missing required fields", http.StatusBadRequest)
 		return
 	}
 
-	err = h.storer.AddDog(dog)
+	id, err := h.storer.AddDog(dog)
+	if err != nil {
+		fmt.Println(err)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	dog.ID = id
+
+	responseData, err := json.Marshal(dog)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusCreated)
-	w.Write([]byte("Dog added successfully"))
+	_, err = w.Write(responseData)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 }

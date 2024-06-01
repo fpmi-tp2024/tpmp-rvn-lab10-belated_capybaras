@@ -18,7 +18,7 @@ type Dog struct {
 	Photo            []byte `json:"image" db:"photo"`
 	Description      string `json:"description" db:"description"`
 	ShortDescription string `json:"shortDescription" db:"short_description"`
-	ShelterEmail     string `json:"shelter_email" db:"shelter_email"`
+	ShelterEmail     string `json:"shelterEmail" db:"shelter_email"`
 }
 
 type Shelter struct {

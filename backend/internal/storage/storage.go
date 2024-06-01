@@ -170,12 +170,13 @@ func (s *Storage) UpdateShelter(shelter models.Shelter) error {
 	return nil
 }
 
-func (s *Storage) AddDog(dog models.Dog) error {
-	_, err := s.db.Exec("INSERT INTO dogs (name, age, weight, photo, description, short_description, shelter_email) VALUES ($1, $2, $3, $4, $5, $6, $7)",
-		dog.Name, dog.Age, dog.Weight, dog.Photo, dog.Description, dog.ShortDescription, dog.ShelterEmail)
+func (s *Storage) AddDog(dog models.Dog) (int, error) {
+	var id int
+	err := s.db.QueryRow("INSERT INTO dogs (name, age, weight, photo, description, short_description, shelter_email) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id",
+		dog.Name, dog.Age, dog.Weight, dog.Photo, dog.Description, dog.ShortDescription, dog.ShelterEmail).Scan(&id)
 	if err != nil {
-		return err
+		return 0, err
 	}
 
-	return nil
+	return id, nil
 }
